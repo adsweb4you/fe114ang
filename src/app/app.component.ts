@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fe114ang';
+  title = 251;
+
+
+  myval(ev:any){
+ 
+    this.title = ev
+  }
+
+
 }
+
