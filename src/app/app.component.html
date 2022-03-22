@@ -18,5 +18,75 @@
  <input  #myname (input)="myval(myname)">მნიშვნელობის შევვლა 
 
 
+ <div class="p-4 bg-warning" *ngIf="mybool; else myesle">
+     if
+ </div>
+ 
+
+ <ng-template #myesle>
+    
+ <div class="p-4 bg-primary">
+    else
+</div>
+ </ng-template>
+
+ <div class="col-lg-3 mx-auto">
+     <select name="" id="" #country class="form-control mb-4" (change)="swith(country.value)">
+         <option value="ka">საქართველო</option>
+         <option value="fr">საფრანგეთი</option>
+         <option value="gb">დიდი ბრიტანეთი</option>
+     </select>
+ 
+     <div [ngSwitch]="lang">
+         <div *ngSwitchCase="'ka'">
+
+            <h1>საქართველო</h1>
+
+         </div>
+
+         <div *ngSwitchCase="'fr'">
+
+            <h1>georgie</h1>
+
+         </div>
+
+         <div *ngSwitchCase="'gb'">
+
+            <h1>georgia</h1>
+
+         </div>
+
+         <div *ngSwitchDefault>
+             <h1>საწყისი მნიშვნელობა</h1>
+         </div>
+     </div>
+
+ </div>
+
+ <div class="container">
+     <div class="row">
+         <div class="col-lg-4" *ngFor="let prod of Product; index as i">
+            <div class="card" >
+                <img [src]="prod.img" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{prod.title}} {{i}}</h5>
+                  <p class="text-secendary">{{prod.cat_name}}</p>
+                  <div class="price" *ngIf="prod.disc !== null ;else nodisc">
+                   <span>{{prod.disc}} ₾ </span>   <small class="text-danger"><del> {{prod.price}} </del> </small>
+                  </div>
+
+                  <ng-template #nodisc>
+                    <div class="price">
+                        <p>{{prod.price}} ₾</p>
+                    </div>
+                  </ng-template>
+
+                </div>
+              </div>
+         </div>
+     </div>
+ </div>
+
  <app-footer></app-footer>
 
+ 

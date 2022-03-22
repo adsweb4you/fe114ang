@@ -4,3 +4,19 @@
     top: 0;
 
 }
+
+aside{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 350px;
+    max-width: 70vw;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: all .6s ease;
+    background-color: aqua;
+
+    &.show{
+        transform: translateX(0);
+    }
+}

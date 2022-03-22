@@ -40,6 +40,32 @@ export class AppComponent {
    this.style.backgroundColor = vals
   }
 
- 
+
+  mybool = true;
+  lang = 'ka'
+
+  swith(vls?:any){
+    this.lang = vls 
+  }
+
+
+  Product = [
+    {
+      img:'assets/img/logo.png',
+      title:'ჩიფსი ლეისი',
+      cat_name:'სასუსნავი',
+      price:5.40,
+      disc:5
+    },
+
+    {
+      img:'assets/img/logo.png',
+      title:'ჩიფსი ლეისი ლუქსი' ,
+      cat_name:'სასუსნავი',
+      price:5.40,
+      disc:null,
+    }
+  ]
+
 }
 

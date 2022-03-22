@@ -11,6 +11,8 @@ export class NavComponent implements OnInit {
  @Output() Text = new EventEmitter<any>();
   constructor() { }
 
+  showbar = false;
+
   ngOnInit(): void {
 
  
@@ -20,6 +22,10 @@ export class NavComponent implements OnInit {
 
   typing(val:any){
     this.Text.emit(val)
+  }
+
+  showbal(){
+   this.showbar = !this.showbar
   }
 
 }
