@@ -10,12 +10,36 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class AppComponent {
   title = 54;
-
+  fawcolor = 'green'
+ 
+ style = {
+   backgroundColor: this.fawcolor, 
+   padding:'25px',
+   borderRadius: '25px'
+  };
 
   myval(ev:any){
     this.title = ev
   }
 
+  ifrounded = 'text-center';
+  ifpadd = false;
 
+  rounded(event:any){
+    let val = event.target.value;
+    this.style.borderRadius = val+"px";
+    if (val > 55) {
+       this.ifpadd = true
+    }else{
+      this.ifpadd = false
+    }
+  }
+
+  changeval(vals:any){
+   this.fawcolor  = vals;
+   this.style.backgroundColor = vals
+  }
+
+ 
 }
 

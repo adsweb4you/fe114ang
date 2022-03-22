@@ -1,5 +1,18 @@
- <app-nav [clas]="'bg-danger'"></app-nav>
+ <app-nav  (Text)="changeval($event)" [clas]="'bg-danger'"></app-nav>
  
+  <!--<header [attr.data-color]="fawcolor == 'red' ? 'blue' : ''" #myhader>
+
+ </header>
+
+ {{myhader.getAttribute('data-color')}} -->
+
+
+ <header [ngStyle]="style" [ngClass]="ifrounded">
+  <h1> ჩემი კოდი </h1>
+</header>
+
+<input type="range"  (input)="rounded($event)">
+
  <h1 id="test">{{ title  == 25 ? 'ჭეშმარიტია' : 'მცდარია'}} | {{title}}</h1>
 
  <input  #myname (input)="myval(myname)">მნიშვნელობის შევვლა 
