@@ -1,4 +1,5 @@
 import { Component, OnInit, Input , Output, EventEmitter } from '@angular/core';
+import { Router, NavigationStart, NavigationEnd, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,13 +10,28 @@ export class NavComponent implements OnInit {
 
  @Input()  clas =  'bg-light'
  @Output() Text = new EventEmitter<any>();
-  constructor() { }
+  constructor(
+    private router:Router,
+    private activerouter:ActivatedRoute,
+  ) { }
 
   showbar = false;
 
   ngOnInit(): void {
 
  
+
+   this.router.events.subscribe(events=>{
+   
+     if (events instanceof NavigationEnd) { 
+     
+       if (events.url == '/') {
+         this.clas = 'bg-dark'
+       }else{
+        this.clas = 'bg-light'
+       }
+     }
+   })
 
   }
 

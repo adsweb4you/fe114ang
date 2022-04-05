@@ -1,0 +1,35 @@
+<div class="container my-5">
+
+    <button class="btn btn-sm btn-success" (click)="goback()">უკან გამოსვლა</button>
+
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">{{Product.title}}
+      
+    </h1>
+  
+    <!-- Portfolio Item Row -->
+    <div class="row">
+  
+      <div class="col-md-8">
+        <img class="img-fluid" [src]="Product.imagegal[Product.poster]" alt="">
+      </div>
+  
+      <div class="col-md-4">
+        <h3 class="my-3">აღწერა</h3>
+        
+        <ul>
+          <li>ფასი:{{Product.price}} ₾</li>
+ 
+        </ul>
+      </div>
+  
+    </div>
+    <!-- /.row -->
+
+ <a   [routerLink]="['/detals/'+Product.id+'/'+'/comments']">კომენტარები</a>    
+  
+    <router-outlet></router-outlet>
+
+  </div>
+  <!-- /.container -->
+  

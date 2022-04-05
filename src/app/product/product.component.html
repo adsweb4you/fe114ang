@@ -1,0 +1,31 @@
+<div class="container my-5  ">
+
+  <button class="btn btn-success" (click)="getdate()"> მოთხოვნა </button>
+
+    <div class="row">
+        <div class="col-lg-3 mb-3 mt-3" *ngFor="let Prod of Product; index as i">
+            <div class="card  border-0 rounded shadow position-relative">
+                <span class="btn btn-danger btn-sm position-absolute"  *ngIf="Prod.gift">ფასდაკლება</span>
+                <img [src]="Prod.imagegal[Prod.poster]" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{Prod.title}}</h5>
+                  <h5 class="text-success" *ngIf="Prod.discount_price == 0; else prices">{{Prod.price}}    ₾</h5>
+                  <ng-template #prices>
+                    <h5 class="text-success">{{Prod.discount_price}} ₾</h5>
+                  </ng-template>
+                  <div class="weight">
+                      <button class="btn  m-2 btn-sm"
+                       *ngFor="let weight of Prod.weight; index as s" 
+                       (click)="getprice(weight,i,s)"
+                       [ngClass]="s == Prod.active_weigh ? 'btn-success' : 'btn-warning'"
+                       >
+                       {{weight}}   კგ    
+                    </button>
+                  </div>
+                  <hr class="opacity-25">
+                  <a  [routerLink]="['/detals/'+Prod.id]" class="btn btn-success btn-sm">სრულად ნახვა</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>

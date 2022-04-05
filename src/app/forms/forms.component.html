@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="col-lg-3 mx-auto">
+        <!-- <form action="" (ngSubmit)="myform()">
+
+         
+            <small class="text-danger"  *ngIf="title.invalid && title.dirty && title.errors?.required">სავალდებულო ველი</small>
+            <small class="text-danger"  *ngIf="title.invalid && title.dirty && title.errors?.minlength">შეიყვანეთ მინიმუმ 5 სიმბოლო</small>
+            <small class="text-success"  *ngIf="title.valid && title.dirty">გამოიყურება კარგად!</small>
+            <input type="text" minlength="5"   class="form-control mb-4" placeholder="დასახელება" [formControl]="title" required>
+ 
+            
+            <input type="text" class="form-control mb-4" placeholder="ელ:ფოსტა" [formControl]="email">
+
+            <textarea type="text" class="form-control mb-4" placeholder="ტექსტი" [formControl]="text"></textarea>
+      
+             <button type="button" class="btn btn-success" (click)="setvalue()">მინიჭება</button>
+             <button class="btn btn-warning">გაგზავნა</button>
+        </form> -->
+
+        <form action="" [formGroup]="Login" (ngSubmit)="geobj()">
+
+            <input type="text" class="form-control mb-3"  name="" id="" formControlName="emails"   >
+            <small class="text-danger" *ngIf="emails?.invalid && emails?.dirty">სავალდებულო ველი</small>
+               {{emails?.errors | json}}
+            <input type="password"   class="form-control mb-3"  name="" id="" formControlName="password">
+
+            <button type="button" class="btn btn-success" (click)="setpactvalue()">მინიჭება</button>
+            <button class="btn btn-success" [disabled]="Login.invalid">გაგზავნა</button>
+
+        </form>
+
+    </div>
+</div>

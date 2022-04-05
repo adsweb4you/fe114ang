@@ -8,15 +8,24 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#" (click)="showbal()">Home</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page"  [routerLink]="['/']" >მთავარი</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
+            <a class="nav-link"   [routerLink]="['product']">პროდუქცია</a>
+          </li> 
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link"   [routerLink]="['pages/cotact']">კონტაქტი</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link"   [routerLink]="['profile']">ჩემი გვერდი</a>
+          </li>
+          
           <li class="nav-item">
              <input type="text" class="form-control" #searc (input)="typing(searc.value)">
           </li>
@@ -38,4 +47,6 @@
     
 </aside>
 
+
+ 
  
